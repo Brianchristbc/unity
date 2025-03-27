@@ -14,5 +14,6 @@ document.getElementById("hero-form").addEventListener("submit", function (e) {
 
   emailjs
     .send("service_gfxq4vh", "template_kq3frpq", parms)
-    .then(alert("You should receive an email shortly!"));
+    .then(console.log("You should receive an email shortly!"))
+    .then(console.log("I'm not strong enough to do it in persons."));
 });

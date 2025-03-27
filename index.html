@@ -16,55 +16,92 @@
       href="./img/unity-logo-large.png"
       type="image/x-icon"
     />
-    <script
-      type="text/javascript"
-      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
-    ></script>
-    <script type="text/javascript">
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script>
       (function () {
-        emailjs.init({
-          publicKey: "qM76z92M1k11ahE93",
-        });
+        emailjs.init({ publicKey: "qM76z92M1k11ahE93" });
       })();
     </script>
-    <script src="./script.js" defer></script>
   </head>
   <body>
+    <div class="logo-container">
+      <img src="./img/unity-logo.png" alt="Unity Logo" class="logo" />
+    </div>
     <div class="hero">
       <p class="hero-heading">DIAL<span class="inverse">ED</span> IN</p>
       <p class="hero-subheading">
-        We'll call back with some interesting tech to unite the world!
+        We'll call back shortly with interesting tech to unite the world!
       </p>
-      <!-- Form with a honeypot field for spam prevention -->
-      <form class="hero-form" id="hero-form">
-        <div class="input-row">
-          <input
-            type="text"
-            name="user_name"
-            placeholder="Alexander G."
-            required
-          />
+      <div class="phone-container">
+        <img
+          src="./img/unity-ios-form-background.png"
+          alt="iOS Phone"
+          class="phone-image"
+        />
+        <div class="screen-overlay">
+          <form class="phone-form" id="hero-form">
+            <div class="input-row">
+              <label for="user_name">Name</label>
+              <input
+                type="text"
+                name="user_name"
+                id="user_name"
+                placeholder="Alexander G."
+                required
+              />
+            </div>
+            <div class="input-row">
+              <label for="user_email">Email</label>
+              <input
+                type="email"
+                name="user_email"
+                id="user_email"
+                placeholder="grahambell@email.com"
+                required
+              />
+            </div>
+            <input type="text" name="hp" id="hp" style="display: none" />
+            <button
+              type="submit"
+              class="submit-button"
+              aria-label="Submit"
+            ></button>
+          </form>
+          <div
+            id="form-confirmation"
+            class="form-confirmation"
+            style="display: none"
+          >
+            <p>We've given your inbox a dial!</p>
+          </div>
         </div>
-        <div class="input-row horizontal-row">
-          <input
-            type="email"
-            name="user_email"
-            placeholder="grahambell@email.com"
-            required
-          />
-          <button type="submit">Join the call</button>
-        </div>
-        <!-- Honeypot field (hidden from users) -->
-        <input type="text" name="hp" id="hp" style="display: none" />
-      </form>
-      <!-- Confirmation message that appears after successful submission -->
-      <div
-        id="form-confirmation"
-        class="form-confirmation"
-        style="display: none"
-      >
-        <p>We'll be in touch</p>
       </div>
     </div>
+    <p class="copyright">Copyright © 2025 Unity AI - All Rights Reserved.</p>
+
+    <script>
+      document
+        .getElementById("hero-form")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          let honeypot = document.getElementById("hp").value;
+          if (honeypot !== "") {
+            return;
+          }
+          let parms = {
+            name: e.target.user_name.value,
+            email: e.target.user_email.value,
+          };
+          emailjs
+            .send("service_gfxq4vh", "template_kq3frpq", parms)
+            .then(function () {
+              document.querySelector(".submit-button").style.backgroundImage =
+                'url("./img/unity-form-submitted-button.png")';
+              document.querySelector(".phone-form").style.display = "none";
+              document.getElementById("form-confirmation").style.display =
+                "block";
+            });
+        });
+    </script>
   </body>
 </html>
