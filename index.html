@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Unity</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton&family=Shadows+Into+Light&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="shortcut icon"
+      href="./img/unity-logo-large.png"
+      type="image/x-icon"
+    />
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+    ></script>
+    <script type="text/javascript">
+      (function () {
+        emailjs.init({
+          publicKey: "qM76z92M1k11ahE93",
+        });
+      })();
+    </script>
+    <script src="./script.js" defer></script>
+  </head>
+  <body>
+    <div class="hero">
+      <p class="hero-heading">DIAL<span class="inverse">ED</span> IN</p>
+      <p class="hero-subheading">
+        We'll call back with some interesting tech to unite the world!
+      </p>
+      <!-- Form with a honeypot field for spam prevention -->
+      <form class="hero-form" id="hero-form">
+        <div class="input-row">
+          <input
+            type="text"
+            name="user_name"
+            placeholder="Alexander G."
+            required
+          />
+        </div>
+        <div class="input-row horizontal-row">
+          <input
+            type="email"
+            name="user_email"
+            placeholder="grahambell@email.com"
+            required
+          />
+          <button type="submit">Join the call</button>
+        </div>
+        <!-- Honeypot field (hidden from users) -->
+        <input type="text" name="hp" id="hp" style="display: none" />
+      </form>
+      <!-- Confirmation message that appears after successful submission -->
+      <div
+        id="form-confirmation"
+        class="form-confirmation"
+        style="display: none"
+      >
+        <p>We'll be in touch</p>
+      </div>
+    </div>
+  </body>
+</html>
