@@ -52,17 +52,18 @@
             </div>
             <div class="input-row">
               <label for="user_number">Phone Number</label>
-              <input
-                type="tel"
-                name="user_number"
-                id="user_number"
-                placeholder="1234-5678"
-                pattern="\d{4}-\d{4}"
-                required
-              />
+              <div class="phone-input-container">
+                <span class="phone-prefix">+65</span>
+                <input
+                  type="tel"
+                  name="user_number"
+                  id="user_number"
+                  placeholder="1234-5678"
+                  pattern="\d{4}-\d{4}"
+                  required
+                />
+              </div>
             </div>
-            </div>
-            <input type="text" name="hp" id="hp" style="display: none" />
             <button
               type="submit"
               class="submit-button"
