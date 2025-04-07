@@ -4,11 +4,13 @@
   --off-white-dark: #e2e0d8;
   --white: #ffffff;
 }
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
 body {
   background-color: var(--off-white);
   height: 100vh;
@@ -17,6 +19,7 @@ body {
   font-family: "Anton", sans-serif;
   position: relative;
 }
+
 .logo-container {
   position: absolute;
   top: 1rem;
@@ -24,10 +27,12 @@ body {
   transform: translateX(-50%) scale(2);
   z-index: 1000;
 }
+
 .logo {
   width: clamp(100px, 8vw, 150px);
   transition: width 0.3s ease;
 }
+
 .hero {
   position: relative;
   height: 100vh;
@@ -38,35 +43,42 @@ body {
   overflow: hidden;
   padding-top: 5rem;
 }
+
 .hero-heading {
   font-size: 11.2rem;
   color: var(--purple);
   text-align: center;
   transition: width 0.3s ease;
 }
+
 .inverse {
   color: var(--off-white-dark);
 }
+
 .hero-subheading {
   margin: -3rem 0 2rem 0;
-  font-size: 1.5rem;
-  font-family: "Shadows Into Light";
+  font-size: 1.2rem;
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 100;
   text-align: center;
   width: 80%;
   color: #333;
   transition: width 0.3s ease;
 }
+
 .phone-container {
   position: relative;
   width: clamp(400px, 60%, 500px);
   margin: 0.01rem auto;
   transition: width 0.3s ease;
 }
+
 .phone-image {
   display: block;
   width: 100%;
   height: auto;
 }
+
 .screen-overlay {
   position: absolute;
   top: 15%;
@@ -74,6 +86,7 @@ body {
   transform: translateX(-50%);
   width: 75%;
 }
+
 .phone-form {
   display: flex;
   flex-direction: column;
@@ -103,11 +116,13 @@ body {
   flex-direction: column;
   gap: 0.3rem;
 }
+
 .input-row label {
   font-size: 1rem;
   color: #fff;
   font-family: "SF Pro", sans-serif;
 }
+
 .input-row input {
   width: 100%;
   padding: 0.5rem 1rem;
@@ -119,9 +134,11 @@ body {
   outline: none;
   font-family: "SF Pro", sans-serif;
 }
+
 .input-row input::placeholder {
   color: #cccccca4;
 }
+
 .submit-button {
   display: block;
   width: 3rem;
@@ -135,10 +152,10 @@ body {
   transform: scale(1.5);
   transition: background-image 0.3s ease;
 }
+
 .form-confirmation {
   font-size: 1.5rem;
   font-family: "SF Pro Display";
-  src: url(./fonts/sf-pro-display/SFPRODISPLAYREGULAR.OTF) format("woff");
   font-weight: 100;
   color: var(--white);
   margin-top: 2rem;
@@ -161,16 +178,20 @@ body {
   .hero-heading {
     font-size: 8rem;
   }
+
   .hero-subheading {
     font-size: 1.5rem;
     margin: -2rem 0 1rem 0;
   }
+
   .phone-container {
     width: 400px;
   }
+
   .logo {
     width: clamp(100px, 8vw, 150px);
   }
+
   .submit-button {
     transform: scale(1.2);
     margin: 0 auto;
@@ -183,42 +204,22 @@ body {
     font-size: 4rem;
     margin: -0.5rem 0 0rem 0;
   }
-  .hero-subheading {
-    font-size: 1.2rem;
-    margin: -0.6rem 0 0rem 0;
-  }
-  .phone-container {
-    width: 400px;
-    margin: 0 0 1rem 0;
-    transform: scale(0.9);
-  }
-  .logo {
-    width: clamp(80px, 6vw, 130px);
-  }
-  .submit-button {
-    transform: scale(1.3);
-    margin: 0 auto;
-    margin-top: 5px;
-  }
-}
 
-@media (max-width: 450px) {
-  .hero-heading {
-    font-size: 4rem;
-    margin: -0.5rem 0 0rem 0;
-  }
   .hero-subheading {
     font-size: 1.2rem;
     margin: -0.6rem 0 0rem 0;
   }
+
   .phone-container {
     width: 400px;
     margin: 0 0 1rem 0;
     transform: scale(0.9);
   }
+
   .logo {
     width: clamp(80px, 6vw, 130px);
   }
+
   .submit-button {
     transform: scale(1.3);
     margin: 0 auto;

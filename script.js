@@ -1,16 +1,29 @@
 document.getElementById("hero-form").addEventListener("submit", function (e) {
   e.preventDefault();
-  let honeypot = document.getElementById("hp").value;
-  if (honeypot !== "") {
-    return;
+
+  // Check honeypot field
+  const honeypot = document.getElementById("hp").value;
+  if (honeypot !== "") return;
+
+  // Get the raw phone number from the input field
+  let rawNumber = e.target.user_number.value;
+
+  // If the number is 8 digits long, insert a dash after the first 4 digits
+  if (rawNumber.length === 8) {
+    rawNumber = rawNumber.slice(0, 4) + "-" + rawNumber.slice(4);
   }
-  let parms = {
+
+  const parms = {
     name: e.target.user_name.value,
-    number: "+65" + e.target.user_number.value, // Include +65 prefix
+    number: "+65" + rawNumber,
   };
+
   emailjs.send("service_gfxq4vh", "template_kq3frpq", parms).then(function () {
+    // Change submit button appearance on success
     document.querySelector(".submit-button").style.backgroundImage =
       'url("./img/unity-form-submitted-button.png")';
+
+    // Hide the form and show the confirmation message
     document.querySelector(".phone-form").style.display = "none";
     document.getElementById("form-confirmation").style.display = "block";
   });

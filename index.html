@@ -4,18 +4,26 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Unity</title>
-    <link rel="stylesheet" href="./style.css" />
+
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Anton&family=Shadows+Into+Light&display=swap"
       rel="stylesheet"
     />
+
+    <!-- Favicon -->
     <link
       rel="shortcut icon"
       href="./img/unity-logo-large.png"
       type="image/x-icon"
     />
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- EmailJS -->
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script>
       (function () {
@@ -23,15 +31,20 @@
       })();
     </script>
   </head>
+
   <body>
     <div class="logo-container">
       <img src="./img/unity-logo.png" alt="Unity Logo" class="logo" />
     </div>
+
     <div class="hero">
       <p class="hero-heading">DIAL<span class="inverse">ED</span> IN</p>
       <p class="hero-subheading">
-        We'll call back shortly with interesting tech to unite the world!
+        Hi, Brian here! This is my light foray into a specific use case for
+        multimodal AI. Enter your name and phone number to receive a demo call
+        for a food ordering experience with brAIn!
       </p>
+
       <div class="phone-container">
         <img
           src="./img/unity-ios-form-background.png"
@@ -40,6 +53,9 @@
         />
         <div class="screen-overlay">
           <form class="phone-form" id="hero-form">
+            <!-- Honeypot field -->
+            <input type="text" id="hp" name="hp" style="display: none" />
+
             <div class="input-row">
               <label for="user_name">Name</label>
               <input
@@ -50,6 +66,7 @@
                 required
               />
             </div>
+
             <div class="input-row">
               <label for="user_number">Phone Number</label>
               <div class="phone-input-container">
@@ -58,53 +75,37 @@
                   type="tel"
                   name="user_number"
                   id="user_number"
-                  placeholder="1234-5678"
-                  pattern="\d{4}-\d{4}"
+                  placeholder="12345678"
+                  pattern="\d{8}"
                   required
                 />
               </div>
             </div>
+
             <button
               type="submit"
               class="submit-button"
               aria-label="Submit"
             ></button>
           </form>
+
           <div
             id="form-confirmation"
             class="form-confirmation"
             style="display: none"
           >
-            <p>We've given your inbox a dial!</p>
+            <p>You should receive a call shortly!</p>
           </div>
         </div>
       </div>
     </div>
-    <p class="copyright">Copyright © 2025 Unity AI - All Rights Reserved.</p>
 
-    <script>
-      document
-        .getElementById("hero-form")
-        .addEventListener("submit", function (e) {
-          e.preventDefault();
-          let honeypot = document.getElementById("hp").value;
-          if (honeypot !== "") {
-            return;
-          }
-          let parms = {
-            name: e.target.user_name.value,
-            email: e.target.user_email.value,
-          };
-          emailjs
-            .send("service_gfxq4vh", "template_kq3frpq", parms)
-            .then(function () {
-              document.querySelector(".submit-button").style.backgroundImage =
-                'url("./img/unity-form-submitted-button.png")';
-              document.querySelector(".phone-form").style.display = "none";
-              document.getElementById("form-confirmation").style.display =
-                "block";
-            });
-        });
-    </script>
+    <p class="copyright">
+      The call will last for 3.5 minutes at a maximum and all call logs are
+      deleted :)
+    </p>
+
+    <!-- Script -->
+    <script src="script.js"></script>
   </body>
 </html>
