@@ -21,11 +21,12 @@ body {
 }
 
 .logo-container {
-  position: absolute;
+  display: none;
+  /* position: absolute;
   top: 1rem;
   left: 50%;
   transform: translateX(-50%) scale(2);
-  z-index: 1000;
+  z-index: 1000; */
 }
 
 .logo {
@@ -45,10 +46,12 @@ body {
 }
 
 .hero-heading {
-  font-size: 11.2rem;
+  font-size: 10.2rem;
   color: var(--purple);
   text-align: center;
   transition: width 0.3s ease;
+  margin-top: -3rem;
+  margin-bottom: 1rem;
 }
 
 .inverse {
@@ -57,7 +60,7 @@ body {
 
 .hero-subheading {
   margin: -3rem 0 2rem 0;
-  font-size: 1.2rem;
+  font-size: 2.2rem;
   font-family: "Source Sans Pro", sans-serif;
   font-weight: 100;
   text-align: center;
@@ -176,7 +179,8 @@ body {
 
 @media (max-width: 685px) {
   .hero-heading {
-    font-size: 8rem;
+    font-size: 7rem;
+    margin-top: -3rem;
   }
 
   .hero-subheading {
@@ -203,10 +207,11 @@ body {
   .hero-heading {
     font-size: 4rem;
     margin: -0.5rem 0 0rem 0;
+    margin-top: -3rem;
   }
 
   .hero-subheading {
-    font-size: 1.2rem;
+    font-size: 0.9rem;
     margin: -0.6rem 0 0rem 0;
   }
 
