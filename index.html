@@ -51,14 +51,16 @@
               />
             </div>
             <div class="input-row">
-              <label for="user_email">Email</label>
+              <label for="user_number">Phone Number</label>
               <input
-                type="email"
-                name="user_email"
-                id="user_email"
-                placeholder="grahambell@email.com"
+                type="tel"
+                name="user_number"
+                id="user_number"
+                placeholder="1234-5678"
+                pattern="\d{4}-\d{4}"
                 required
               />
+            </div>
             </div>
             <input type="text" name="hp" id="hp" style="display: none" />
             <button
