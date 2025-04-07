@@ -8,11 +8,6 @@ document.getElementById("hero-form").addEventListener("submit", function (e) {
   // Get the raw phone number from the input field
   let rawNumber = e.target.user_number.value;
 
-  // If the number is 8 digits long, insert a dash after the first 4 digits
-  if (rawNumber.length === 8) {
-    rawNumber = rawNumber.slice(0, 4) + "-" + rawNumber.slice(4);
-  }
-
   const parms = {
     name: e.target.user_name.value,
     number: "+65" + rawNumber,
